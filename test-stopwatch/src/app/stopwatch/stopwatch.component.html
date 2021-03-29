@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>StopWatch</h1>
+  <div class="card">
+    <h2>{{ currentTime | async | timeFormat }}</h2>
+    <button class="btn" (click)="start()" *ngIf="(isPause | async);else stopBtn">Start</button>
+    <button class="btn" (click)="wait()">Wait</button>
+    <button class="btn" (click)="reset()">Reset</button>
+  </div>
+</div>
+
+<ng-template #stopBtn>
+  <button class="btn" (click)="stop()">Stop</button>
+</ng-template>
